@@ -1,0 +1,102 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    padding: 20px;
+    background-color: rgb(118, 118, 118);
+}
+h1 {
+    font-size: 100px; /* Adjusted for screen compatibility */
+    font-weight: bold;
+    text-shadow: 1px 1px 2px #000000; /* Lighter shadow for depth */
+    margin-bottom: 20px;
+}
+
+
+
+
+button {
+    padding: 10px 20px;
+    width: 120px;
+    margin: 20px;
+    font-size: 35px;
+    border-radius: 25px;
+}
+button:active {
+    background-color: #ffeb3b; /* Change to the color you prefer */
+}
+button:hover {
+    background-color: #0056b3; /* Darker shade on hover */
+}
+
+input[type="text"],
+select {
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 80%;
+    font-size: 18px;
+    margin-bottom: 15px;
+}
+#visitorList {
+    max-height: 300px; /* Adjust the height as needed */
+    overflow-y: auto; /* Makes the list scrollable */
+    border: 1px solid #ddd; /* Adds a border around the list */
+    margin: 20px;
+    padding: 10px;
+}
+
+.visitorEntry {
+    border-bottom: 1px solid #ddd; /* Separates entries */
+    padding: 10px;
+    font-size: 18px; /* Larger font for readability */
+    cursor: pointer; /* Indicates the entry is clickable */
+}
+.visitorName {
+    font-weight: bold;
+    color: #0056b3; /* A distinct, readable color */
+    margin-right: 5px;
+}
+
+.badgeNumber {
+    font-weight: bold;
+    color: #c70039; /* Another distinct color for contrast */
+    margin-left: 5px;
+}
+
+
+.visitorEntry:hover {
+    background-color: #f0f0f0; /* Highlight on hover */
+}
+#signInForm {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    background-color: white; /* A clean background color */
+    border-radius: 10px; /* Rounded corners for a softer look */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    max-width: 600px;
+    max-height: auto; /* Maximum width for better control on large screens */
+    margin: auto; /* Center the form */
+    gap: 15px; /* Spacing between form elements */
+}
+
+input[type="text"]:focus,
+select:focus {
+    border-color: #007BFF; /* Highlight border on focus */
+}
+
+/* Adjustments for iPad compatibility */
+@media screen and (max-width: 768px) {
+    input[type="text"],
+    select {
+        padding: 10px; /* Reduce padding for smaller screens */
+        font-size: 16px; /* Adjust font size for readability */
+    }
+    button {
+        padding: 15px 30px; /* Adjust button size for smaller screens */
+        font-size: 20px; /* Adjust button font size */
+    }
+}
+

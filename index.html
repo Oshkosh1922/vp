@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Visitor Sign-In App</title>
+    <link rel="stylesheet" href="styles/styles.css">
+</head>
+<body>
+    <h1>Visitors Log</h1>
+    <div id="home">
+        <button id="btnIn">IN</button>
+        <button id="btnOut">OUT</button>
+    </div>
+
+    <div id="signInForm" class="form-container" style="display:none;">
+        <div class="input-group">
+            <input type="text" id="visitorName" placeholder=" " required>
+            <label for="visitorName">Visitor's Name</label>
+        </div>
+        <div class="input-group">
+            <input type="text" id="companyName" placeholder=" " required>
+            <label for="companyName">Company Name</label>
+        </div>
+        <div class="input-group">
+            <select id="personToSee" required>
+                <option value="" disabled selected></option>
+                <option value="Natalie">Natalie</option>
+                <!-- Add other options here -->
+            </select>
+            <label for="personToSee">Person to Visit</label>
+        </div>
+        <div class="input-group">
+            <input type="text" id="badgeNumber" placeholder=" " required>
+            <label for="badgeNumber">Badge Number</label>
+        </div>
+      <button onclick="submitForm()">Submit</button>
+        
+        
+    </div>
+
+    <div id="visitorList" style="display:none;"></div>
+    <script src="js/script.js"></script>
+</body>
+<footer> 
+    <img src="images/Logo.png">
+</footer>
+</html>
