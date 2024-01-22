@@ -5,8 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Visitor Sign-In App</title>
     <link rel="stylesheet" href="styles/styles.css">
+    <script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
+
 </head>
 <body>
+    <div id="signOutModal" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <h2>Sign Out Successful</h2>
+            <p>You have successfully signed out.</p>
+        </div>
+    </div>
+    
+    
+    
     <h1>Visitors Log</h1>
     <div id="home">
         <button id="btnIn">IN</button>
@@ -25,13 +37,14 @@
         <div class="input-group">
             <select id="personToSee" required>
                 <option value="" disabled selected></option>
-                <option value="Natalie">Dustin Utschig</option>
-                <option value="Natalie">Natalie Gratke</option>
-                <option value="Natalie">Jeff Berger</option>
-                <option value="Natalie">Dave Dawiedczyk</option>
-                <option value="Natalie">Linda Smits</option>
-                <option value="Natalie">Kathy O'Bright</option>
-                <option value="Natalie">Matt McMillan</option>
+                <option value="Dustin Utschig">Dustin Utschig</option>
+                <option value="Natalie Gratke">Natalie Gratke</option>
+                <option value="Jeff Berger">Jeff Berger</option>
+                <option value="Dave Dawiedczyk">Dave Dawiedczyk</option>
+                <option value="Linda Smits">Linda Smits</option>
+                <option value="Kathy O'Bright">Kathy O'Bright</option>
+                <option value="Matt McMillan">Matt McMillan</option>
+                <option value="Michael Harris">Michael</option>
                 
             </select>
             <label for="personToSee">Person to Visit</label>
@@ -45,11 +58,16 @@
         
     </div>
 
-    <div id="visitorList" style="display:none;"></div>
+<!-- Below the visitor list in your HTML -->
+<div id="visitorList" style="display:none;"></div>
+<button id="clearListButton" style="display: none;">Clear Visitor List</button>
+
+    
     <script src="js/script.js"></script>
 </body>
 <footer> 
     <img src="images/Logo.png">
 </footer>
 </html>
+
 
