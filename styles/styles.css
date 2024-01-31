@@ -2,14 +2,14 @@ body {
     font-family: Arial, sans-serif;
     text-align: center;
     padding: 20px;
-    background-color: rgb(241, 241, 241);
+    background-color: rgb(109, 109, 109);
 }
 h1 {
     font-size: 100px; 
     font-weight: bold;
-    text-shadow: 3px 3px 6px #030303; 
+    text-shadow: 3px 3px 6px #097dc6; 
     margin-bottom: 20px;
-    color: #8d8d8d;
+    color: #ffffff;
 }
 
 
