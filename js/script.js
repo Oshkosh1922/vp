@@ -1,23 +1,17 @@
 document.addEventListener("DOMContentLoaded", function() {
-   
+    document.getElementById('btnIn').addEventListener('click', function() {
+        document.getElementById('home').style.display = 'none';
+        document.getElementById('signInForm').style.display = 'block';
+        document.getElementById('clearListButton').style.display = 'none';
+    });
 
-document.getElementById('btnIn').addEventListener('click', function() {
-    document.getElementById('home').style.display = 'none';
-    document.getElementById('signInForm').style.display = 'block';
-    document.getElementById('clearListButton').style.display = 'none'; 
-});
+    document.getElementById('btnOut').addEventListener('click', function() {
+        document.getElementById('home').style.display = 'none';
+        document.getElementById('visitorList').style.display = 'block';
+        document.getElementById('clearListButton').style.display = 'block';
+        displayVisitors();
+    });
 
-
-document.getElementById('btnOut').addEventListener('click', function() {
-    document.getElementById('home').style.display = 'none';
-    document.getElementById('visitorList').style.display = 'block';
-    document.getElementById('clearListButton').style.display = 'block'; 
-    displayVisitors();
-});
-
-
-
-   
     var closeSpan = document.getElementsByClassName("close-button")[0];
     closeSpan.onclick = function() {
         var modal = document.getElementById("signOutModal");
@@ -95,8 +89,11 @@ function showThankYouModal(personToSee) {
 function displayVisitors() {
     const visitors = JSON.parse(localStorage.getItem('visitors')) || [];
     const listContainer = document.getElementById('visitorList');
+
+    // Clear the list container
     listContainer.innerHTML = '';
 
+    // Iterate through visitors
     visitors.forEach((visitor, index) => {
         const div = document.createElement('div');
         div.className = 'visitorEntry';
@@ -130,7 +127,25 @@ function displayVisitors() {
 
         listContainer.appendChild(div);
     });
+
+    // Add "Clear List" button at the bottom
+    const clearListButton = document.createElement('button');
+    clearListButton.id = 'clearListButton';
+    clearListButton.textContent = 'Clear';
+    clearListButton.addEventListener('click', function() {
+        var password = prompt("Please enter the password to clear the list:");
+        if (password === "123") {
+            localStorage.setItem('visitors', JSON.stringify([]));
+            displayVisitors();
+            alert("Visitor list cleared.");
+        } else {
+            alert("Incorrect password. The list was not cleared.");
+        }
+    });
+
+    listContainer.appendChild(clearListButton);
 }
+
 
 
 
@@ -145,7 +160,7 @@ function signOut(visitorIndex) {
         document.getElementById('visitorList').style.display = 'none';
         document.getElementById('home').style.display = 'block';
 
-        updateModalContent("Sign Out Successful", "You have successfully signed out.");
+        updateModalContent("Sign Out Successful", "Thank you for visiting Norka!");
         showModalForDuration(5000);
     } else {
         console.error('Visitor not found');
