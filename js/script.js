@@ -10,7 +10,15 @@ document.addEventListener("DOMContentLoaded", function() {
         document.getElementById('visitorList').style.display = 'block';
         document.getElementById('clearListButton').style.display = 'block';
         displayVisitors();
+    
+        
+        var signOutMessage = document.getElementById('signOutMessage');
+        signOutMessage.style.display = 'block'; 
+        setTimeout(function() {
+            signOutMessage.style.display = 'none'; 
+        }, 5000);
     });
+    
 
     var closeSpan = document.getElementsByClassName("close-button")[0];
     closeSpan.onclick = function() {
@@ -43,8 +51,10 @@ function submitForm() {
     displayVisitors();
 
     
-    updateModalContent("Thank You", `Thank you - ${personToSee} has been notified.`);
-    showModalForDuration(5000);
+    updateModalContent("Thank You", `Thank you - <strong>Please ring the bell and ask for</strong> ${personToSee}.`);
+
+
+    showModalForDuration(8000);
 
     document.getElementById('signInForm').style.display = 'none';
     document.getElementById('home').style.display = 'block';
@@ -80,7 +90,7 @@ function showThankYouModal(personToSee) {
     }
 
     
-    document.getElementById('modalMessage').textContent = `Thank you - ${personToSee} has been notified.`;
+    document.getElementById('modalMessage').textContent = `Thank you - Please right the bell and ask for ${personToSee}.`;
     modal.style.display = "block";
 }
 
@@ -128,7 +138,7 @@ function displayVisitors() {
         listContainer.appendChild(div);
     });
 
-    // Add "Clear List" button at the bottom
+
     const clearListButton = document.createElement('button');
     clearListButton.id = 'clearListButton';
     clearListButton.textContent = 'Clear';
@@ -172,8 +182,9 @@ function updateModalContent(title, message) {
         modal = createModal();
     }
     modal.querySelector('h2').textContent = title;
-    modal.querySelector('p').textContent = message;
+    modal.querySelector('p').innerHTML = message; 
 }
+
 
 function showModalForDuration(duration) {
     var modal = document.getElementById("signOutModal");
@@ -218,4 +229,5 @@ document.getElementById('clearListButton').addEventListener('click', function() 
         alert("Incorrect password. The list was not cleared.");
     }
 });
+
 
