@@ -73,15 +73,16 @@ select {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 20px;
+    padding: 20px; 
     background-color: white; 
     border-radius: 10px; 
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
-    max-width: 600px;
-    max-height: auto; 
+    width: 80%; 
+    max-width: 450px; 
     margin: auto; 
     gap: 15px; 
 }
+
 
 input[type="text"]:focus,
 select:focus {
@@ -136,6 +137,88 @@ select:focus {
         padding: 15px 30px; 
         font-size: 20px; 
     }
+}
+.input-group {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 400px; 
+    margin-bottom: 20px;
+    margin-left: 200px;
+}
+
+
+input[type="text"],
+select {
+    padding: 10px;
+   
+    border-radius: 10px;
+    width: auto; 
+    max-width: 300px; 
+    font-size: 18px;
+    margin-bottom: 15px;
+    margin-left: -125px;
+    box-sizing: border-box; 
+}
+
+
+label {
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: #fff;
+    padding: 0 5px;
+    margin-left: -15px;
+    transition: all 0.3s;
+    pointer-events: none; 
+    color: #999;
+}
+
+input:placeholder-shown + label,
+select:placeholder-shown + label {
+    font-size: 18px;
+    top: 15px; 
+}
+
+input:not(:placeholder-shown) + label,
+select:not(:placeholder-shown) + label,
+input:focus + label,
+select:focus + label {
+    top: -10px; 
+    font-size: 14px;
+    color: #007bff; 
+}
+
+select {
+    padding-right: 30px; 
+}
+
+
+.select-arrow {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    pointer-events: none;
+}
+
+
+.input-hint {
+    position: absolute; 
+    left: 6%; 
+    transform: translateX(-50%); 
+    bottom: -3px; 
+    width: auto; 
+}
+#signOutMessage {
+    font-weight: bold; 
+    padding: 20px;
+    background-color: #f8d7da;
+    color: #721c24;
+    border-radius: 5px;
+    margin-bottom: 20px;
 }
 
 
