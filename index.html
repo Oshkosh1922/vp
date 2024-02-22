@@ -6,13 +6,8 @@
     <title>Visitor Sign-In App</title>
     <link rel="stylesheet" href="styles/styles.css">
     <script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
-    
 </head>
 <body>
-
-    
-    
-    
     <h1>Visitors Log</h1>
     <div id="home">
         <button id="btnIn">IN</button>
@@ -30,7 +25,7 @@
         </div>
         <div class="input-group">
             <select id="personToSee" required>
-                <option value="" disabled selected></option>
+                <option value="" disabled selected hidden>Choose person to see</option>
                 <option value="Dustin Utschig">Dustin Utschig</option>
                 <option value="Natalie Gratke">Natalie Gratke</option>
                 <option value="Jeff Berger">Jeff Berger</option>
@@ -38,32 +33,32 @@
                 <option value="Linda Smits">Linda Smits</option>
                 <option value="Kathy O'Bright">Kathy O'Bright</option>
                 <option value="Matt McMillan">Matt McMillan</option>
-                <option value="Michael Harris">Michael</option>
-                
+                <option value="Michael Harris">Michael Harris</option>
             </select>
-            <label for="personToSee">Too See</label>
+            <label for="personToSee"></label>
         </div>
         <div class="input-group">
             <input type="text" id="badgeNumber" placeholder=" " required>
             <label for="badgeNumber">Badge #</label>
+            <span class="input-hint">(Please select a badge from basket and input your #)</span>
         </div>
-      <button onclick="submitForm()">Submit</button>
-        
-        
+        <button onclick="submitForm()">Submit</button>
     </div>
-
-<!-- Below the visitor list in your HTML -->
-<div id="visitorList" style="display:none;"></div>
-<button id="clearListButton" style="display: none;">Clear Visitor List</button>
-
+    <div id="signOutMessage" style="display: none; padding: 20px; background-color: #f8d7da; color: #721c24; border-radius: 5px; margin-bottom: 20px;">
+        <strong>Please select your name from the list to sign out.</strong>
+    </div>
     
+    <div id="visitorList" style="display:none;"></div>
+    <button id="clearListButton" style="display: none;">Clear Visitor List</button>
+
     <script src="js/script.js"></script>
 </body>
 <footer> 
-    <a href="index.html"> <!-- Replace "index.html" with the actual filename or path of your homepage -->
+    <a href="index.html"> 
         <img src="images/Logo.png" alt="Logo" id="logoButton">
     </a>
 </footer>
 </html>
+
 
 
